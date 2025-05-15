@@ -1,0 +1,221 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-05-15T10:52:16.6604584+05:30",
+  "ArtifactName": ".",
+  "ArtifactType": "filesystem",
+  "Metadata": {
+    "ImageConfig": {
+      "architecture": "",
+      "created": "0001-01-01T00:00:00Z",
+      "os": "",
+      "rootfs": {
+        "type": "",
+        "diff_ids": null
+      },
+      "config": {}
+    }
+  },
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-27152",
+          "PkgID": "axios@0.22.0",
+          "PkgName": "axios",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/axios@0.22.0",
+            "UID": "2597692330fff2c5"
+          },
+          "InstalledVersion": "0.22.0",
+          "FixedVersion": "1.8.2, 0.30.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27152",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "axios: Possible SSRF and Credential Leakage via Absolute URL in axios Requests",
+          "Description": "axios is a promise based HTTP client for the browser and node.js. The issue occurs when passing absolute URLs rather than protocol-relative URLs to axios. Even if ⁠baseURL is set, axios sends the request to the specified absolute URL, potentially causing SSRF and credential leakage. This issue impacts both server-side and client-side usage of axios. This issue is fixed in 1.8.2.",
+          "Severity": "HIGH",
+          "CweIDs": ["CWE-918"],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-27152",
+            "https://github.com/axios/axios",
+            "https://github.com/axios/axios/commit/02c3c69ced0f8fd86407c23203835892313d7fde",
+            "https://github.com/axios/axios/commit/fb8eec214ce7744b5ca787f2c3b8339b2f54b00f",
+            "https://github.com/axios/axios/issues/6463",
+            "https://github.com/axios/axios/pull/6829",
+            "https://github.com/axios/axios/releases/tag/v1.8.2",
+            "https://github.com/axios/axios/security/advisories/GHSA-jr5f-v2jv-69x6",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-27152",
+            "https://www.cve.org/CVERecord?id=CVE-2025-27152"
+          ],
+          "PublishedDate": "2025-03-07T16:15:38.773Z",
+          "LastModifiedDate": "2025-03-07T20:15:38.56Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-47068",
+          "PkgID": "rollup@2.79.1",
+          "PkgName": "rollup",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/rollup@2.79.1",
+            "UID": "a9360cb105bd3744"
+          },
+          "InstalledVersion": "2.79.1",
+          "FixedVersion": "3.29.5, 4.22.4, 2.79.2",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-47068",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "rollup: DOM Clobbering Gadget found in rollup bundled scripts that leads to XSS",
+          "Description": "Rollup is a module bundler for JavaScript. Versions prior to 2.79.2, 3.29.5, and 4.22.4 are susceptible to a DOM Clobbering vulnerability when bundling scripts with properties from `import.meta` (e.g., `import.meta.url`) in `cjs`/`umd`/`iife` format. The DOM Clobbering gadget can lead to cross-site scripting (XSS) in web pages where scriptless attacker-controlled HTML elements (e.g., an `img` tag with an unsanitized `name` attribute) are present. Versions 2.79.2, 3.29.5, and 4.22.4  contain a patch for the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": ["CWE-79"],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 6.4
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 6.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 6.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-47068",
+            "https://github.com/rollup/rollup",
+            "https://github.com/rollup/rollup/blob/b86ffd776cfa906573d36c3f019316d02445d9ef/src/ast/nodes/MetaProperty.ts#L157-L162",
+            "https://github.com/rollup/rollup/blob/b86ffd776cfa906573d36c3f019316d02445d9ef/src/ast/nodes/MetaProperty.ts#L180-L185",
+            "https://github.com/rollup/rollup/commit/2ef77c00ec2635d42697cff2c0567ccc8db34fb4",
+            "https://github.com/rollup/rollup/commit/e2552c9e955e0a61f70f508200ee9f752f85a541",
+            "https://github.com/rollup/rollup/security/advisories/GHSA-gcx4-mw62-g8wm",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-47068",
+            "https://www.cve.org/CVERecord?id=CVE-2024-47068"
+          ],
+          "PublishedDate": "2024-09-23T16:15:06.947Z",
+          "LastModifiedDate": "2024-10-29T16:15:05.583Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-30533",
+          "PkgID": "xlsx@0.18.5",
+          "PkgName": "xlsx",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/xlsx@0.18.5",
+            "UID": "57d56d58d49bc9fe"
+          },
+          "InstalledVersion": "0.18.5",
+          "FixedVersion": "0.19.3",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-30533",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Prototype Pollution in sheetJS",
+          "Description": "SheetJS Community Edition before 0.19.3 allows Prototype Pollution via a crafted file. In other words. 0.19.2 and earlier are affected, whereas 0.19.3 and later are unaffected.",
+          "Severity": "HIGH",
+          "CweIDs": ["CWE-1321"],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://cdn.sheetjs.com/advisories/CVE-2023-30533",
+            "https://git.sheetjs.com/sheetjs/sheetjs",
+            "https://git.sheetjs.com/sheetjs/sheetjs/issues/2667",
+            "https://git.sheetjs.com/sheetjs/sheetjs/issues/2986",
+            "https://git.sheetjs.com/sheetjs/sheetjs/src/branch/master/CHANGELOG.md",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-30533"
+          ],
+          "PublishedDate": "2023-04-24T08:15:07.217Z",
+          "LastModifiedDate": "2025-02-04T20:15:47.887Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-22363",
+          "PkgID": "xlsx@0.18.5",
+          "PkgName": "xlsx",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/xlsx@0.18.5",
+            "UID": "57d56d58d49bc9fe"
+          },
+          "InstalledVersion": "0.18.5",
+          "FixedVersion": "0.20.2",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22363",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "SheetJS Regular Expression Denial of Service (ReDoS)",
+          "Description": "SheetJS Community Edition before 0.20.2 is vulnerable.to Regular Expression Denial of Service (ReDoS).",
+          "Severity": "HIGH",
+          "CweIDs": ["CWE-1333"],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cdn.sheetjs.com/advisories/CVE-2024-22363",
+            "https://cwe.mitre.org/data/definitions/1333.html",
+            "https://git.sheetjs.com/sheetjs/sheetjs",
+            "https://git.sheetjs.com/sheetjs/sheetjs/src/tag/v0.20.2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-22363"
+          ],
+          "PublishedDate": "2024-04-05T06:15:10.2Z",
+          "LastModifiedDate": "2024-11-21T08:56:07.53Z"
+        }
+      ]
+    }
+  ]
+}
