@@ -275,25 +275,35 @@ export default function VulnerabilityViewer() {
         }
     };
 
+    // Modify the countBySeverity function to count unique packages instead of individual vulnerabilities
     const countBySeverity = (severity) => {
-        return results.filter((vuln) => {
+        // Create a Set to track unique package names with this severity
+        const uniquePackagesWithSeverity = new Set();
+
+        results.forEach((vuln) => {
+            let hasMatchingSeverity = false;
+
             if (dataSource === 'trivy') {
-                return (
-                    vuln.Severity && vuln.Severity.toUpperCase() === severity
-                );
+                hasMatchingSeverity =
+                    vuln.Severity && vuln.Severity.toUpperCase() === severity;
+                if (hasMatchingSeverity)
+                    uniquePackagesWithSeverity.add(vuln.PkgName);
             } else if (dataSource === 'grype') {
-                return (
+                hasMatchingSeverity =
                     vuln.vulnerability &&
                     vuln.vulnerability.severity &&
-                    vuln.vulnerability.severity.toUpperCase() === severity
-                );
+                    vuln.vulnerability.severity.toUpperCase() === severity;
+                if (hasMatchingSeverity)
+                    uniquePackagesWithSeverity.add(vuln.artifact.name);
             } else if (dataSource === 'combined') {
-                return (
-                    vuln.severity && vuln.severity.toUpperCase() === severity
-                );
+                hasMatchingSeverity =
+                    vuln.severity && vuln.severity.toUpperCase() === severity;
+                if (hasMatchingSeverity)
+                    uniquePackagesWithSeverity.add(vuln.PkgName);
             }
-            return false;
-        }).length;
+        });
+
+        return uniquePackagesWithSeverity.size;
     };
 
     const addToFixList = (vuln) => {
