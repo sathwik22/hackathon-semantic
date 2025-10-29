@@ -4,8 +4,6 @@
 
 A modern React-based web application that revolutionizes the way development teams handle security vulnerability reports. Born from the challenges of managing multiple security scanning tools, this application provides a unified, intuitive interface for analyzing and prioritizing security vulnerabilities detected by Trivy, Grype, and other security scanners.
 
-![Security Report Viewer](public/logo192.png)
-
 ## Why This Project Exists
 
 In modern DevSecOps practices, development teams often struggle with:
@@ -248,8 +246,6 @@ This project was developed during an intensive 48-hour Security Innovation Hacka
     - Integration with issue tracking systems
 
 ## Contact & Support
-
-Created with ❤️ by Sathwik - [@sathwik22](https://github.com/sathwik22)
 
 Project Link: [https://github.com/sathwik22/hackathon-semantic](https://github.com/sathwik22/hackathon-semantic)
 
